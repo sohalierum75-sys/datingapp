@@ -1,0 +1,32 @@
+# Node & Dependencies
+node_modules/
+.npm
+package-lock.json
+
+# Cloudflare Wrangler
+.wrangler/
+.dev.vars
+
+# Flutter & Dart Build artifacts
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+build/
+*.lock
+
+# Android Gradle artifacts
+.gradle/
+android/app/build/
+android/.gradle/
+local.properties
+*.iml
+.idea/
+
+# Large binaries (APKs should be downloaded via Cloudflare Pages or GitHub Releases)
+*.apk
+public/app.apk
+
+# OS specific files
+.DS_Store
+Thumbs.db

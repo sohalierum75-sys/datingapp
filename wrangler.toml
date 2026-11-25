@@ -1,0 +1,27 @@
+name = "multi-subdomain-landing-page-builder"
+main = "src/index.js"
+compatibility_date = "2024-04-01"
+account_id = "ab3531a5f2c2f6d1028e0d17dd5ce8cd"
+
+# Cloudflare D1 Database Binding
+[[d1_databases]]
+binding = "DB"
+database_name = "landing-page-db"
+database_id = "a5589dbe-696b-4933-b576-dafaf5b9d27e"
+
+# Cloudflare KV Namespace for fast edge caching of landing page configs
+[[kv_namespaces]]
+binding = "PAGE_CACHE"
+id = "4df7e20dadbb432bb762431025263d60"
+
+# Environment Variables
+[vars]
+ROOT_DOMAIN = "careersuite.cc"
+ADMIN_DEFAULT_USER = "admin"
+JWT_SECRET = "landing-page-builder-secret-2026"
+
+# Worker Routes on Zone
+routes = [
+  { pattern = "*.careersuite.cc/*", zone_name = "careersuite.cc" },
+  { pattern = "careersuite.cc/*", zone_name = "careersuite.cc" }
+]

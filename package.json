@@ -1,0 +1,22 @@
+{
+  "name": "multi-subdomain-landing-page-builder",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Production-ready Multi-Subdomain Landing Page Builder on Cloudflare Workers, D1, and KV",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "wrangler dev",
+    "build": "node test/run-all.js",
+    "deploy": "wrangler deploy",
+    "test": "node test/run-all.js",
+    "db:init": "wrangler d1 execute landing-page-db --local --file=./schema.sql",
+    "db:init:remote": "wrangler d1 execute landing-page-db --remote --file=./schema.sql"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "wrangler": "^3.109.0"
+  }
+}
